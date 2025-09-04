@@ -12,12 +12,12 @@ int main() {
     printf("Digite a quantidade vendida: ");
     scanf("%f", &quantidade);
 
-    if (quantidade <= 100) {
+    if (quantidade <= 100) { 
         valor_total = quantidade * valor_unitario;
         printf("Valor total a pagar: R$ %.2f\n", valor_total);
         return 0;
     }
-    else {
+    else {  //Desconto aplica apenas para compras acima de 100 unidades
         valor_excedente = quantidade - 100;
         valor_descontado = (valor_excedente * valor_unitario) * desconto;
         valor_total = (100 * valor_unitario) + (valor_excedente * valor_unitario) - valor_descontado;
