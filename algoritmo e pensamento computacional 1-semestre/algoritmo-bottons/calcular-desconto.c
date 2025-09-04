@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
     float valor_unitario, quantidade, desconto, valor_excedente, valor_descontado, valor_total;
@@ -19,8 +20,8 @@ int main() {
     }
     else {  //Desconto aplica apenas para compras acima de 100 unidades
         valor_excedente = quantidade - 100;
-        valor_descontado = (valor_excedente * valor_unitario) * desconto;
-        valor_total = (100 * valor_unitario) + (valor_excedente * valor_unitario) - valor_descontado;
+        valor_descontado = (valor_excedente * valor_unitario) - (valor_excedente * valor_unitario) * desconto;
+        valor_total = (100 * valor_unitario) + valor_descontado;
         printf("Valor total a pagar com desconto: R$ %.2f\n", valor_total); 
         return 0;
     }
