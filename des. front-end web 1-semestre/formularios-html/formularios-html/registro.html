@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<header>
+    <h1>Registrar do Herói</h1>
+</header>
+<body>
+    <form action = "registrarHeroi" id = "registroHeroi">
+        <label for = "nomeHeroi">Nome completo do herói: </label>
+        <input 
+            type = "text" 
+            id = "nomeHeroi" 
+            required 
+            placeholder = "Digite o nome"
+        ><br>
+
+        <label for = "emailHeroi">Email do herói: </label>
+        <input 
+            type = "email" 
+            id = "emailHeroi" 
+            required 
+            placeholder = "Digite o email"
+        ><br>
+
+        <label for = "telefoneHeroi">Telefone do herói: </label>
+        <input 
+            type = "tel" 
+            id = "telefoneHeroi" 
+            required 
+            placeholder = "Digite o telefone"
+        ><br>
+
+        <label for = "websiteHeroi">Website do herói: </label>
+        <input 
+            type = "url" 
+            id = "websiteHeroi" 
+            placeholder = "Digite o website"
+        ><br>
+
+        <label for = "nascimentoHeroi">Data de nascimento do herói: </label>
+        <input 
+            type = "date" 
+            id = "nascimentoHeroi" 
+            required
+        ><br>
+
+        <label for = "idadeHeroi">Idade do herói: </label>
+        <input 
+            type = "number" 
+            id = "idadeHeroi" 
+            min = "16" 
+            max = "99" 
+            required 
+            placeholder = "Digite a idade"
+        ><br>
+
+        <label for = "biografiaHeroi">Biografia do herói: </label>
+        <textarea 
+            id = "biografiaHeroi" 
+            rows = "4" 
+            cols = "50" 
+            placeholder = "Digite a biografia"
+        ></textarea><br>
+        
+    </form>
+    <div>
+        <br>
+        <p>
+            Já é um herói registrado?<br>
+            <a href = "login.html">Login</a>
+        </p>
+        <p>
+            Escolha suas preferencias:<br>
+            <a href = "preferencias.html">Preferências</a>
+        </p>
+        <p>
+            Costumize seu traje!<br>
+            <a href = "traje.html">Customizar</a>
+        </p>
+    </div>
+</body>
+</html>
