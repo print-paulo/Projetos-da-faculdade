@@ -5,7 +5,7 @@ int main() {
     printf("Digite o valor de cada unidade do produto: ");
     scanf("%f", &valor_unitario);
     
-    printf("Digite o valor do desconto : ");
+    printf("Digite o valor do desconto em %%: ");
     scanf("%f", &desconto);
     desconto = desconto / 100;
     
