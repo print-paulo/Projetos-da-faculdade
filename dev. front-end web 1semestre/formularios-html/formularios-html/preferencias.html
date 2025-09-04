@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferências do herói</title>
+</head>
+<header>
+    <h1>Preferências do Herói</h1>
+</header>
+<body>
+    <form>
+        <fieldset action = "escolherPreferencias" id = "preferenciasHeroi">
+            <legend>Plataforma Preferida</legend>
+            
+            <label for = "pc">PC</label>
+            <input 
+                type = "radio" 
+                id = "pc" 
+                name = "plataforma" 
+                value = "pc"
+            ><br>
+
+            <label for = "playstation">Playstation</label>
+            <input 
+                type = "radio" 
+                id = "playstation" 
+                name = "plataforma" 
+                value = "playstation"
+            ><br>
+
+            <label for = "xbox">Xbox</label>
+            <input 
+                type = "radio" 
+                id="xbox" 
+                name="plataforma" 
+                value="xbox"
+            ><br>
+
+            <label for = "nintendo">Nintendo</label>
+            <input 
+                type = "radio" 
+                id="nintendo" 
+                name="plataforma" 
+                value="nintendo"
+            ><br>
+        </fieldset>
+        <fieldset id = "franquiaFilmeFavorita">
+            <legend>Franquia de filma favorita</legend>
+            <label for = "senhorDosAneis">Senhor dos Anéis</label>
+            <input 
+                type = "checkbox" 
+                id = "senhorDosAneis" 
+                name = "franquia" 
+                value = "senhorDosAneis"
+            ><br>
+            
+            <label for = "starWars">Star Wars</label>
+            <input 
+                type = "checkbox" 
+                id = "starWars" 
+                name = "franquia" 
+                value = "starWars"
+            ><br>
+            
+            <label for = "Marvel">Marvel</label>
+            <input 
+                type = "checkbox" 
+                id = "Marvel" 
+                name = "franquia" 
+                value = "Marvel"
+            ><br>
+            
+            <label for = "DC">DC</label>
+            <input 
+                type = "checkbox" 
+                id = "DC" 
+                name = "franquia" 
+                value = "DC"
+            ><br>
+        </fieldset>
+        <fieldset id = "nivelDePoder">
+            <legend>Seu nível de poder</legend>
+            <label for = "nivelDePoderHeroi">Nível de Poder</label>
+            <select id = "nivelDePoderHeroi" name = "nivelPoder" required>
+                <option value = "0">0 - Nenhum</option>
+                <option value = "1">1 - Intermediário</option>
+                <option value = "2">2 - Avançado</option>
+                <option value = "3">3 - Mestre</option>
+            </select>
+        </fieldset>
+    </form>
+    <div>
+        <br>
+        <p>
+            Voltar para area de registro<br>
+            <a href = "registro.html">Registro</a>
+        </p>
+    </div>
+</body>
+</html>

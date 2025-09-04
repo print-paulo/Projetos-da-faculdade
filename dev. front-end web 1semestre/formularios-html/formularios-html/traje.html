@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traje do Herói</title>
+</head>
+<header>
+    <h1>Personalize seu traje de herói</h1>
+</header>
+<body>
+    <form action = "personalizarTraje" id = "trajeHeroi">
+        <label for = "corDoTraje">Cor do Traje</label>
+        <input 
+            type = "color" 
+            id = "corDoTraje" 
+            name = "corDoTraje" 
+            value = "#ffffff"
+            required
+        ><br>
+
+        <label for = "durabilidadeTraje">Durabilidade do traje</label>
+        <input 
+            type = "range" 
+            id = "durabilidadeTraje" 
+            name = "durabilidadeTraje" 
+            min = "1" 
+            max = "100" 
+            value = "50" 
+            required
+        ><br>
+        
+        <label for = "pesquisaAcessorios">Pesquisar Acessórios</label>
+        <input 
+            type = "search" 
+            id = "pesquisaAcessorios" 
+            name = "pesquisaAcessorios" 
+            placeholder = "Buscar acessórios"
+            required
+        ><br>
+        <label for = "mesESemanaDeEntrega">Mês e Semana de Entrega do Traje</label>
+        <input 
+            type = "month" 
+            id = "mesESemanaDeEntrega" 
+            name = "mesESemanaDeEntrega" 
+            required
+        ><br>
+        
+        <label for = "horaDeEntrega">Hora da Entrega do Traje</label>
+        <input 
+            type = "time" 
+            id = "horaDeEntrega" 
+            name = "horaDeEntrega" 
+            required
+        ><br>
+        
+        <button type = "reset">Limpar</button>
+    </form>
+    <div>
+        <br>
+        <p>
+            Voltar para area de registro<br>
+            <a href = "registro.html">Registro</a>
+        </p>
+    </div>
+</body>
+</html>

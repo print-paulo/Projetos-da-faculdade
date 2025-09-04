@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario HTML</title>
+</head>
+<header>
+    <h1>Login do Herói</h1>
+</header>
+<body>
+    <form action = "logarHeroi" id = "loginHeroi">
+        <label for = "nomeHeroi">Nome de Herói: </label>
+        <input 
+            type = "text" 
+            id = "nomeHeroi" 
+            required 
+            placeholder = "Digite seu login"
+        ><br>
+        
+        <label for = "senhaHeroi">Senha Secreta: </label>
+        <input 
+            type = "password" 
+            id = "senhaHeroi" 
+            required 
+            placeholder = "Digite sua senha"
+        ><br>
+        
+        <label for = "enviarHeroi">Entrar no Esconderijo </label>
+        <button 
+            type = "submit" 
+            id = "enviarHeroi"
+        >Entrar</button><br>
+    </form>
+    <div>
+        <br>
+        <p>
+            Herói sem registro?<br>
+            <a href = "registro.html">Registrar</a>
+        </p>
+    </div>
+</body>
+</html>
