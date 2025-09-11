@@ -30,6 +30,7 @@
         printf("Nome: %s\n", aluno1.nome);
         printf("Média: %.2f\n\n\n", aluno1.media);
         
+        //Exibir os dados do array com structs
         printf("=== Dados dos Alunos ===\n");
         for (int i = 0; i < 2; i++) {
             printf("Aluno #%d\n", i + 1);
