@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de Desenvolvimento Web</title>
+</head>
+<body>
+    <header>
+		<h1>
+			<abbr title="Festival Universitário de Tecnologia e Cultura">FUTC</abbr>
+		</h1>
+	</header>
+	<nav>
+		<ul>
+			<li>Apresentação</li>
+			<li>Notícias</li>
+			<li>Programação</li>
+			<li>Grade</li>
+			<li>Mídia</li>
+		</ul>
+	</nav>
+	<main>
+		<section id="apresentacao">
+			<h2>Apresentação</h2>
+			<p>Nesse site no puro html você verá multiplas aplicações de semânticas em um site web, isso é de extrema importância, 
+				pois <strong>a semantica ajuda pessoas com deficiência a enteder melhor o site</strong> pelo simples fato que estamos
+				 colocando "nomes"ou "sections" em tudo.</p>
+		</section>
+		<section id="noticias">
+			<h2>Notícias</h2>
+			<article>
+				<h3>IA se recusa a fazer codigo para dev!</h3>
+				<p>
+					Em um artigo recente uma ia se recusou a escrever um código para um programador...
+					<q cite="https://oglobo.globo.com/opiniao/noticia/2025/03/15/ia-se-recusa-a-escrever-codigo-e-sugere-que-programador-com
+					preenda-melhor-o-sistema.ghtml">
+						Eu não posso escrever esse código, você precisa entender melhor o sistema antes de tentar programar.
+					</q>
+					<cite>Cursor AI</cite>
+				</p>
+				
+				<aside>
+					<p>Para mais detalhes, acesse o artigo completo em <a href="https://oglobo.globo.com/opiniao/noticia/2025/03/15/ia-se-re
+						cusa-a-escrever-codigo-e-sugere-que-programador-compreenda-melhor-o-sistema.ghtml" target="_blank">O Globo</a>.</p>
+					<p>Publicado em 15 de março de 2025.</p>
+					</article>
+				</aside>
+		</section>
+		<section id="programacao">
+			<h2>Programação </h2>
+			<h3>Passos para credenciamento:</h3>
+			<ol>
+				<li>Preencha o formulário de inscrição.</li>
+				<li>Envie os documentos necessários.</li>
+				<li>Aguarde a confirmação por e-mail.</li>
+			</ol>
+			<dl>
+				<dt>FUTC: </dt>
+				<dd><abbr title="Festival Universitário de Tecnologia e Cultura">FUTC</abbr> é uma abreviação de Festival Universitário de 
+					Tecnlogia e Cultura.</dd>
+				<dt>IA: </dt>
+				<dd>Inteligencia artificial, varios algoritmos e codigos que cria uma inteligência "semelhante" a humana.</dd>
+				<dt>Sections: </dt>
+				<dd>Seções na tradução literal, no contexto html é uma semantica que separa partes do código e nomeia elas.</dd>
+			</dl>
+		</section>
+		<section id="grade">
+			<h2>Grade </h2>
+			<table cellspacing="1" cellpadding="5">
+				<caption>Grade de Horários</caption>
+				<thead>
+					<tr>
+						<th>Horário</th>
+						<th>Trilha</th>
+						<th>Palestra</th>
+					</tr>
+				</thead>
+				<tbody>
+						<tr>
+							<td>09:00 - 10:00</td>
+							<td>Inovação Tecnológica</td>
+							<td>O Futuro da IA</td>
+						</tr>
+						<tr>
+							<td>10:15 - 11:15</td>
+							<td>Desenvolvimento Web</td>
+							<td>HTML Semântico</td>
+						</tr>
+						<tr>
+							<td>11:30 - 12:30</td>
+							<td>Segurança Digital</td>
+							<td>Cibersegurança em 2025</td>
+						</tr>
+						<tr>
+							<td>13:30 - 14:30</td>
+							<td>Inteligência Artificial</td>
+							<td>Ética na IA</td>
+						</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="3">Total de palestras: 4</td>
+					</tr>
+				</tfoot>
+			</table>
+			<br>
+		</section>
+		<section id="midia">
+			<h2>Mídia</h2>
+				<div>
+					<video title="Videos promovendo a FUTC" controls width="480">
+						<source src="media/videos/test.mp4" type="video/mp4">
+						<source src="media/videos/test.wav" type="video/wav">
+						<p>Seu navegador não suporta o elemento de vídeo.</p>
+					</video>
+				</div>
+				<div>
+					<audio controls>
+						<source title="Audio promovendo a FUTC" src="media/audios/test.mp3" type="audio/mpeg">
+						<p>Seu navegador não suporta o elemento de áudio.</p>
+					</audio>
+				</div>
+				<div>
+					<iframe title="Mapa" src="docs/mapa.html" width="480" height="320" loading="lazy">
+						<p>Seu navegador não suporta iframes</p>
+					</iframe>		
+				</div>
+				<div>
+					<object title="Documentos" data="docs/regulamento.pdf" type="application/pdf" width="480" height="320">
+						<p>Você pode obter o PDF enviando um email para nós pedindo-o no <strong>rodapé do site</strong></p>
+					</object>
+				</div>
+				<div>
+					<embed title="Logo" src="media/images/test.svg" type="image/svg+xml" width="200" height="200">
+						<p>Não foi possivel encontrar o arquivo svg</p>
+					</embed>
+				</div>
+				<div>
+					<canvas title="Canvas" width="300" height="150">
+						<p>Mapa ilustrativo indisponível sem JavaScript.</p>
+					</canvas>
+				</div>
+		</section>
+		<section id="FAQ">
+			<details>
+				<summary>FAQ - Perguntas Frequentes</summary>
+				<dl>
+					<dt>Como me inscrevo no FUTC?</dt>
+					<dd>Você pode se inscrever através do nosso site, na seção de Programação.</dd>
+					<dt>Quais são os requisitos para participar?</dt>
+					<dd>Não há requisitos específicos, todos são bem-vindos!</dd>
+					<dt>Onde posso encontrar o regulamento do evento?</dt>
+					<dd>O regulamento está disponível na seção de Mídia, em formato PDF.</dd>
+					<dt>Haverá transmissão ao vivo das palestras?</dt>
+					<dd>Sim, todas as palestras serão transmitidas ao vivo em nosso canal oficial.</dd>
+				</dl>
+			</details>
+		</section>
+		<footer id="rodape">
+			<address>
+            Rua das Acácias, 789<br>
+            Vila Mariana<br>
+            São Paulo - SP<br>
+            CEP: 04001-230<br>
+			Feito por Paulo Henrique Nascimento Queiroz<br>
+			e-mail: paulohenriquenscmnt06@gmail.com
+			</address>
+		</footer>
+	</main>
+</body>
+</html>
