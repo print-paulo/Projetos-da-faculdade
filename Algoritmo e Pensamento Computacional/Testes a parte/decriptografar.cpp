@@ -3,10 +3,9 @@
 #include <cctype>
 #include <vector>
 
+std::string const alfabeto = "abcdefghijklmnopqrstuvwxyz";
 // Função que aplica o shift ao alfabeto
 std::string aplicarShift(int shift) {
-    std::string alfabeto = "abcdefghijklmnopqrstuvwxyz";
-    
     shift = shift % 26; 
     if (shift < 0) {
         shift += 26; 
@@ -37,7 +36,6 @@ std::string calcularAlfabetoPulado(std::string alfabetoShiftado, int pulo) {
 
 // Função que decriptografa o texto
 std::string decriptografarTexto(const std::string& textoCriptografado, const std::string& alfabetoPulado) {
-    std::string alfabeto = "abcdefghijklmnopqrstuvwxyz";
     std::string mensagem_decifrada = "";
 
     for (char caractere : textoCriptografado) {
@@ -80,7 +78,7 @@ int main() {
     std::cout << "Tentativas de decifracao:\n";
     std::cout << "------------------------------------------------\n\n";
 
-    for (int pulo = 1; pulo <= 13; ++pulo) {
+    for (int pulo = 1; pulo <= 26 / 2; ++pulo) {
         std::string alfabetoPulado = calcularAlfabetoPulado(alfabetoShiftado, pulo);
         std::string mensagemDecriptografada = decriptografarTexto(textoCriptografado, alfabetoPulado);
         std::cout << "Pulo " << pulo << ": " << mensagemDecriptografada << "\n";
