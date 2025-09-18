@@ -3,49 +3,87 @@
 #include <cctype>
 #include <vector>
 
-std::string calcularAlfabetoPulado(std::string alfabetoShiftado, int pulo) {  
-        std::string alfabetoPulado = "";
-        
-        //Verifica quando aplicar a função matemática se a letra já foi "usada"
-        std::vector<bool> usado(25, false);
+// Função que aplica o shift ao alfabeto
+std::string aplicarShift(int shift) {
+    std::string alfabeto = "abcdefghijklmnopqrstuvwxyz";
+    
+    shift = shift % 26; 
+    if (shift < 0) {
+        shift += 26; 
+    }
+    // A lógica de shift agora é executada para todos os casos
+    return alfabeto.substr(shift) + alfabeto.substr(0, shift);
+}
 
-        //Pega as letras "puladas"
-        for (int i = pulo - 1; i < 26; i += pulo) {
+// Função que calcula o alfabeto pulado
+std::string calcularAlfabetoPulado(std::string alfabetoShiftado, int pulo) {
+    std::string alfabetoPulado = "";
+    std::vector<bool> usado(26, false);
+
+    for (int i = pulo - 1; i < 26; i += pulo) {
+        if (i >= 0) {
             alfabetoPulado += alfabetoShiftado[i];
             usado[i] = true;
         }
-
-        //Pega as letras que sobraram e soma com as selecionadas
-        for (int i = 0; i < 26; ++i) {
-            if (!usado[i]) {
-                alfabetoPulado += alfabetoShiftado[i];
-            }
-        }
-        return alfabetoPulado;
     }
 
-int main() {
-    //Armazenando as variáveis
+    for (int i = 0; i < 26; ++i) {
+        if (!usado[i]) {
+            alfabetoPulado += alfabetoShiftado[i];
+        }
+    }
+    return alfabetoPulado;
+}
+
+// Função que decriptografa o texto
+std::string decriptografarTexto(const std::string& textoCriptografado, const std::string& alfabetoPulado) {
     std::string alfabeto = "abcdefghijklmnopqrstuvwxyz";
-    std::string alfabetoFinal = "";
+    std::string mensagem_decifrada = "";
+
+    for (char caractere : textoCriptografado) {
+        if (std::islower(caractere)) {
+            size_t posChave = alfabetoPulado.find(caractere);
+            if (posChave != std::string::npos) {
+                mensagem_decifrada += alfabeto[posChave];
+            } else {
+                mensagem_decifrada += caractere;
+            }
+        } else if (std::isupper(caractere)) {
+            char minuscula = std::tolower(caractere);
+            size_t posChave = alfabetoPulado.find(minuscula);
+            if (posChave != std::string::npos) {
+                char decifrado = alfabeto[posChave];
+                mensagem_decifrada += std::toupper(decifrado);
+            } else {
+                mensagem_decifrada += caractere;
+            }
+        } else {
+            mensagem_decifrada += caractere;
+        }
+    }
+    return mensagem_decifrada;
+}
+
+int main() {
     std::string textoCriptografado = "";
-    std::string textoDecifrado = "";
     int shift = 0;
-    //Pedindo ao usuário a palavra criptografada e o shift
+
     std::cout << "Digite a palavra a ser decriptografada\n";
-    std::cin >> textoCriptografado; //Coleta do usuário a palavra para ser decriptografada
-    std::cout << "Digite o shift (número de casas que o alfabeto se moveu para frente)\n";
+    std::cin >> textoCriptografado; 
+    
+    std::cout << "Digite o shift (numero de casas que o alfabeto se moveu para frente)\n";
     std::cin >> shift;
 
-    //Aplica o shift ao alfabeto original
-    std::string parte_final = alfabeto.substr(shift);
-    std::string parte_inicial = alfabeto.substr(0, shift);
-    std::string alfabetoShift = parte_final + parte_inicial;
-    
-    //Fazer um bruteforce com os valores de pulo
-    for (int pulo = 1; pulo <= 20; ++pulo) {
-        std::string alfabetoFinal = calcularAlfabetoPulado(alfabetoShift, pulo);
-        std::cout << "Com pulo de " << pulo << ": " << alfabetoFinal << std::endl;
+    std::string alfabetoShiftado = aplicarShift(shift);
+
+    std::cout << "\n------------------------------------------------\n";
+    std::cout << "Tentativas de decifracao:\n";
+    std::cout << "------------------------------------------------\n\n";
+
+    for (int pulo = 1; pulo <= 13; ++pulo) {
+        std::string alfabetoPulado = calcularAlfabetoPulado(alfabetoShiftado, pulo);
+        std::string mensagemDecriptografada = decriptografarTexto(textoCriptografado, alfabetoPulado);
+        std::cout << "Pulo " << pulo << ": " << mensagemDecriptografada << "\n";
     }
     
     return 0;
