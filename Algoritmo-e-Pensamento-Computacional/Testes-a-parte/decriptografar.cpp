@@ -13,19 +13,18 @@ std::string aplicarShift(int shift) {
     // A lógica de shift agora é executada para todos os casos
     return alfabeto.substr(shift) + alfabeto.substr(0, shift);
 }
-
+ 
 // Função que calcula o alfabeto pulado
-std::string calcularAlfabetoPulado(std::string alfabetoShiftado, int pulo) {
+std::string calcularAlfabetoPulado(std::string alfabetoShiftado,  int pulo) {
     std::string alfabetoPulado = "";
     std::vector<bool> usado(26, false);
-
+        
     for (int i = pulo - 1; i < 26; i += pulo) {
         if (i >= 0) {
             alfabetoPulado += alfabetoShiftado[i];
             usado[i] = true;
         }
     }
-
     for (int i = 0; i < 26; ++i) {
         if (!usado[i]) {
             alfabetoPulado += alfabetoShiftado[i];
@@ -33,6 +32,7 @@ std::string calcularAlfabetoPulado(std::string alfabetoShiftado, int pulo) {
     }
     return alfabetoPulado;
 }
+    
 
 // Função que decriptografa o texto
 std::string decriptografarTexto(const std::string& textoCriptografado, const std::string& alfabetoPulado) {
@@ -43,19 +43,23 @@ std::string decriptografarTexto(const std::string& textoCriptografado, const std
             size_t posChave = alfabetoPulado.find(caractere);
             if (posChave != std::string::npos) {
                 mensagem_decifrada += alfabeto[posChave];
-            } else {
+            } 
+            else {
                 mensagem_decifrada += caractere;
             }
-        } else if (std::isupper(caractere)) {
+        } 
+        else if (std::isupper(caractere)) {
             char minuscula = std::tolower(caractere);
             size_t posChave = alfabetoPulado.find(minuscula);
             if (posChave != std::string::npos) {
                 char decifrado = alfabeto[posChave];
                 mensagem_decifrada += std::toupper(decifrado);
-            } else {
+            } 
+            else {
                 mensagem_decifrada += caractere;
             }
-        } else {
+        } 
+        else {
             mensagem_decifrada += caractere;
         }
     }
