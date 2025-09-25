@@ -87,6 +87,5 @@ int main() {
         std::string mensagemDecriptografada = decriptografarTexto(textoCriptografado, alfabetoPulado);
         std::cout << "Pulo " << pulo << ": " << mensagemDecriptografada << "\n";
     }
-    
     return 0;
 }
