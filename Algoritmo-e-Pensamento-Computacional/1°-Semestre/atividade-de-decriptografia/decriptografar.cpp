@@ -65,7 +65,7 @@ std::string decriptografarTexto(const std::string& textoCriptografado, const std
     }
     return mensagem_decifrada;
 }
-
+    
 int main() {
     std::string textoCriptografado = "";
     int shift = 0;
