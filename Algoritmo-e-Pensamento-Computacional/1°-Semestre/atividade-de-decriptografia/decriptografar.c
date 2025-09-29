@@ -5,14 +5,15 @@
 char const alfabeto[] = "abcdefghijklmnopqrstuvwxyz";
 
 void aplicarShift(char *alfabetoShiftado, int shift) {
-    int tamanho = strlen(alfabeto);
+    int tamanhoAlfabeto = strlen(alfabeto);
     
-    shift = shift % tamanho;
+    shift = shift % tamanhoAlfabeto;
     if (shift < 0) {
-        shift += tamanho;
+        shift += tamanhoAlfabeto;
     }
 
-
+    strncpy(alfabetoShiftado, alfabeto + shift, 26 - shift);
+    strncat(alfabetoShiftado, alfabeto, shift);
 
 }
 
