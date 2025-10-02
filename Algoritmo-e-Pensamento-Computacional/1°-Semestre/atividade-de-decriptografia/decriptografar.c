@@ -18,7 +18,7 @@ void aplicarShift(char *alfabetoShiftado, int shift) {
     strncat(alfabetoShiftado, alfabeto, shift);
 }
 
-void calcularAlfabetoPulado(char* alfabetoPulado, const char* alfabetoShiftado, int pulo) {
+void calcularAlfabetoPulado(char *alfabetoPulado, const char* alfabetoShiftado, int pulo) {
     int usado[26] = {0};
     int j = 0;
 
@@ -34,7 +34,7 @@ void calcularAlfabetoPulado(char* alfabetoPulado, const char* alfabetoShiftado, 
     alfabetoPulado[26] = '\0';
 }
 
-void decriptografarTexto(const char* textoCriptografado, const char* alfabetoPulado, char* textoDecriptografado) {
+void decriptografarTexto(char *textoDecriptografado, const char* textoCriptografado, const char* alfabetoPulado) {
     char caractere;
     int j = 0;
 
@@ -90,10 +90,8 @@ int main () {
         char textoDecriptografado[50];
 
         calcularAlfabetoPulado(alfabetoPulado, alfabetoShiftado, pulo);
-        decriptografarTexto(textoCriptografado, alfabetoPulado, textoDecriptografado);
+        decriptografarTexto(textoDecriptografado,textoCriptografado, alfabetoPulado);
 
         printf("Pulo %d: %s\n", pulo, textoDecriptografado);
-
     }
-
 }
