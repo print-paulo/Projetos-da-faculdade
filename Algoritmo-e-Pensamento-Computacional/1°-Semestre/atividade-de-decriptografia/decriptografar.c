@@ -19,11 +19,18 @@ void aplicarShift(char *alfabetoShiftado, int shift) {
 
 void calcularAlfabetoPulado(char* alfabetoPulado, const char* alfabetoShiftado, int pulo) {
     int usado[26] = {0};
+    int j = 0;
 
     for (int i = pulo - 1; i < 26; i += pulo) {
-        strncat(alfabetoPulado, &alfabetoShiftado[i], 1);
+        alfabetoPulado[j++] = alfabetoShiftado[i];
         usado[i] = 1;
     }
+    for (int i = 0; i <26; ++i) {
+        if (!usado[i]) {
+            alfabetoPulado[j++] = alfabetoShiftado[i];
+        }
+    }
+    alfabetoPulado[26] = '\0';
 }
 
 int main () {
