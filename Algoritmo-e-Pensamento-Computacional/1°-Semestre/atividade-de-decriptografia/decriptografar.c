@@ -34,8 +34,9 @@ void calcularAlfabetoPulado(char* alfabetoPulado, const char* alfabetoShiftado, 
 }
 
 int main () {
-    char textoCriptografado[32] = "";
+    char textoCriptografado[32];
     int shift = 0;
+    char alfabetoShiftado[27];
 
     printf("Digite o texto a ser decriptografada: \n");
     scanf("%s", textoCriptografado);
@@ -43,5 +44,7 @@ int main () {
     printf("Digite o valor do shift: \n");
     scanf("%d", &shift);
 
+    aplicarShift(alfabetoShiftado, shift);
+    printf("%s\n", alfabetoShiftado);
 
 }
