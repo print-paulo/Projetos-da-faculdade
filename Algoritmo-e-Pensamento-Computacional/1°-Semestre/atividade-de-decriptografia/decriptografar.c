@@ -33,6 +33,42 @@ void calcularAlfabetoPulado(char* alfabetoPulado, const char* alfabetoShiftado, 
     alfabetoPulado[26] = '\0';
 }
 
+void decriptografarTexto(const char* textoCriptografado, const char* alfabetoPulado, char* textoDecriptografado) {
+    char caractere;
+    int j = 0;
+
+    for (int i = 0; textoCriptografado[i] != '\0'; ++i) {
+        caractere = textoCriptografado[i];
+        
+        if (islower(caractere)) {
+            char* ponteiroCaractere = strchr(alfabetoPulado, caractere);
+            if (ponteiroCaractere != NULL) {
+                size_t posicaoChave = ponteiroCaractere - alfabetoPulado;
+                textoDecriptografado[j++] += alfabeto[posicaoChave];
+            }
+            else {
+                textoDecriptografado[j++] = caractere;
+            }   
+        }
+        else if (isupper(caractere)) {
+            char minuscula = tolower(caractere);
+            char* ponteiroCaractere = strchr(alfabetoPulado, minuscula);
+            if (ponteiroCaractere != NULL) {
+                size_t posicaoChave = ponteiroCaractere - alfabetoPulado;
+                char decifrado = alfabeto[posicaoChave];
+                textoDecriptografado[j++] = toupper(decifrado);
+            }
+            else {
+                textoDecriptografado[j++] = caractere;
+            }
+        }
+        else {
+            textoDecriptografado[j++] = caractere;
+        }
+    }
+    textoDecriptografado[j] = '\0';
+}
+
 int main () {
     char textoCriptografado[32];
     int shift = 0;
@@ -43,8 +79,5 @@ int main () {
 
     printf("Digite o valor do shift: \n");
     scanf("%d", &shift);
-
-    aplicarShift(alfabetoShiftado, shift);
-    printf("%s\n", alfabetoShiftado);
 
 }
