@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 char const alfabeto[] = "abcdefghijklmnopqrstuvwxyz";
 
@@ -44,7 +45,7 @@ void decriptografarTexto(const char* textoCriptografado, const char* alfabetoPul
             char* ponteiroCaractere = strchr(alfabetoPulado, caractere);
             if (ponteiroCaractere != NULL) {
                 size_t posicaoChave = ponteiroCaractere - alfabetoPulado;
-                textoDecriptografado[j++] += alfabeto[posicaoChave];
+                textoDecriptografado[j++] = alfabeto[posicaoChave];
             }
             else {
                 textoDecriptografado[j++] = caractere;
@@ -79,5 +80,20 @@ int main () {
 
     printf("Digite o valor do shift: \n");
     scanf("%d", &shift);
+
+    aplicarShift(alfabetoShiftado, shift);
+
+    printf("------------------------------\n Tentativas de decifração:\n------------------------------\n\n");
+
+    for (int pulo = 1; pulo <= 26 / 2; ++pulo) {
+        char alfabetoPulado[27];
+        char textoDecriptografado[50];
+
+        calcularAlfabetoPulado(alfabetoPulado, alfabetoShiftado, pulo);
+        decriptografarTexto(textoCriptografado, alfabetoPulado, textoDecriptografado);
+
+        printf("Pulo %d: %s\n", pulo, textoDecriptografado);
+
+    }
 
 }
