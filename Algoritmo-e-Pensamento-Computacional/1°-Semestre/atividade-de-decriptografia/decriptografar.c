@@ -49,7 +49,7 @@ void decriptografarTexto(char *textoDecriptografado, const char* textoCriptograf
             }
             else {
                 textoDecriptografado[j++] = caractere;
-            }   
+            }
         }
         else if (isupper(caractere)) {
             char minuscula = tolower(caractere);
@@ -84,7 +84,7 @@ int main () {
     aplicarShift(alfabetoShiftado, shift);
 
     printf("------------------------------\n Tentativas de decifração:\n------------------------------\n\n");
-
+    printf("ALfabeto com shift: %s\n\n", alfabetoShiftado);
     for (int pulo = 1; pulo <= 26 / 2; ++pulo) {
         char alfabetoPulado[27];
         char textoDecriptografado[50];
@@ -92,6 +92,6 @@ int main () {
         calcularAlfabetoPulado(alfabetoPulado, alfabetoShiftado, pulo);
         decriptografarTexto(textoDecriptografado,textoCriptografado, alfabetoPulado);
 
-        printf("Pulo %d: %s\n", pulo, textoDecriptografado);
+        printf("PA %d: %s\n Alfabeto com PA: %s\n", pulo, textoDecriptografado, alfabetoPulado);
     }
 }
